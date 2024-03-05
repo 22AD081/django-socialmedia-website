@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Scrapbook</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}"> <!-- Include your CSS files for styling -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        header {
+            background-color:#21c09d;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        main {
+            padding: 20px;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(2, 1fr); /* Updated to two columns */
+        }
+
+        section {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color:#2621c0;
+        }
+
+        button {
+            background-color:#caede1;
+            color: #2621c0;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        select, input[type="color"], input[type="text"], textarea {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #21c09d;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header Section -->
+<header>
+    <h1>Your Scrapbook</h1>
+</header>
+
+<!-- Main Content Section -->
+<main>
+
+    <!-- Cover and Title Section -->
+    <section id="cover-and-title">
+        <h2>My Awesome Scrapbook</h2>
+        <img src="{% static 'im1.png' %}" alt="Scrapbook Cover" style="width: 100%; border-radius: 5px;">
+    </section>
+
+    <!-- Pages and Layouts Section -->
+    <section id="pages-and-layouts">
+        <h2>Create a New Page</h2>
+        <button onclick="createNewPage()">New Page</button>
+
+        <h2>Select Layout</h2>
+        <select id="layout-select" onchange="redirectToLayout()">
+            <option value="">Select Layout</option>
+            <option value="layout1">Layout 1</option>
+            <option value="layout2">Layout 2</option>
+            <!-- Add more layout options as needed -->
+        </select>
+    </section>
+
+    <!-- Content Creation Section -->
+    <section id="content-creation">
+        <h2>Add Content</h2>
+        <input type="file" id="image-upload" accept="image/*">
+        <textarea id="caption" placeholder="Write a caption..."></textarea>
+        <button onclick="addContent()">Add to Page</button>
+    </section>
+
+    <!-- Templates and Themes Section -->
+    <section id="templates-and-themes">
+        <h2>Select Template</h2>
+        <select id="template-select">
+            <option value="template1">Template 1</option>
+            <option value="template2">Template 2</option>
+            <!-- Add more template options as needed -->
+        </select>
+
+        <h2>Customization</h2>
+        <input type="color" id="color-picker" value="#ffcc00">
+        <input type="text" id="font-selector" placeholder="Select Font">
+        <!-- Add more customization options as needed -->
+    </section>
+
+</main>
+
+<!-- Include your JavaScript files for interactivity -->
+<script src="script.js"></script>
+
+<script>
+   function redirectToLayout() {
+        var selectedLayout = document.getElementById("layout-select").value;
+
+        // Specify the new page URLs based on the selectedLayout value
+        if (selectedLayout === "layout1") {
+            window.location.href = "layout1";  // Change "/layout1" to your actual URL
+        } else if (selectedLayout === "layout2") {
+            window.location.href = "template1";  // Change "/layout2" to your actual URL
+        }
+        // Add more conditions as needed for additional layouts
+    }
+</script>
+
+</body>
+</html>

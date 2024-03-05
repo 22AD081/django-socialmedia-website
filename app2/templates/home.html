@@ -1,0 +1,208 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memonest - Capture, Create, Share Memories</title>
+    <!-- Include your CSS files for styling -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fafafa; /* Light Gray */
+        }
+
+        h1 {
+            color:  #2621c0; /* Purple */
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        header nav ul li {
+            margin: 0;
+        }
+
+        header nav ul li a {
+            display: inline-block;
+            padding: 10px;
+            text-decoration: none;
+            color: #2621c0; /* Dark Gray */
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #caede1; /* Light Gray */
+            transition: background-color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            background-color: #e0e0e0; /* Lighter Gray */
+        }
+
+        header nav ul .auth-buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        header nav ul .auth-buttons li {
+            margin: 0;
+            margin-left: 10px;
+        }
+
+        header nav ul .auth-buttons li a {
+            display: inline-block;
+            padding: 10px;
+            text-decoration: none;
+            color: #fff;
+            border: 1px solid #3498db; /* Light Blue */
+            border-radius: 5px;
+            background-color: #3498db; /* Light Blue */
+            transition: background-color 0.3s ease;
+        }
+
+        header nav ul .auth-buttons li a:hover {
+            background-color: #2079b0; /* Slightly Darker Blue */
+        }
+
+         /* Main Content Styles */
+         main {
+            padding: 20px;
+            color: #333; /* Dark Gray */
+            display: flex; /* Use flexbox */
+            flex-wrap: wrap; /* Wrap content to the next line if needed */
+            justify-content: space-between; /*Add space between images */
+        }
+
+        /* Image Styles */
+        main img {
+            max-width: 40%; /* Adjust the width of each image */
+            margin-bottom: 5px; /* Add margin between images */
+        }
+        /* Tag Styles */
+        #tag-container {
+            margin-top: 5px;
+        }
+
+        label[for="tag-dropdown"] {
+            margin-right: 5px;
+            font-weight: bold;
+            color: #2621c0;
+        }
+
+        select#tag-dropdown {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 150px;
+        }
+
+        /* Logo and Description Styles */
+        #logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #logo-container img {
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        #logo-container div {
+            max-width: 600px;
+            text-align: left;
+        }
+
+        #logo-container h1 {
+            font-size: 32px;
+            margin-bottom: 5px;
+        }
+
+        #logo-container p {
+            font-size: 16px;
+            color: #555;
+            margin: 0;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color:  #21c09d;
+            color: #2621c0;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header Section -->
+<header>
+    <div id="logo-container">
+        <img src="{% static 'memo.png' %}" alt="Memory Lane Moments Logo">
+        <div>
+            <h1>Memonest</h1>
+            <p>Capture, Create, and Share Timeless Memories in Interactive Digital Scrapbooks</p>
+        </div>
+    </div>
+    <nav>
+        <ul class="nav-buttons">
+            <li><a href="#home">Home</a></li>
+            <li><a href="scrapbook">Scrapbooks</a></li>
+            <li><a href="timecapsule">Time Capsules</a></li>
+            <li><a href="maps">Interactive Maps</a></li>
+            <li><a href="albums">Collaborative Albums</a></li>
+        </ul>
+        <ul class="auth-buttons">
+            <li><a href="login">Log In</a></li>
+            <li><a href="signup">Sign Up</a></li>
+        </ul>
+        <div id="tag-container">
+            <label for="tag-dropdown">Select Tags:</label>
+            <select id="tag-dropdown" onchange="selectTag(this.value)">
+                <option value="family">Family</option>
+                <option value="vacation">Vacation</option>
+                <!-- Add more tag options dynamically as needed -->
+            </select>
+        </div>
+    </nav>
+</header>
+
+<!-- Main Content Section -->
+<main>
+    <!-- ... (rest of your content) ... -->
+    <img src="{% static 'im2.jpg' %}" alt="image1">
+    <img src="{% static 'im4.jpg' %}" alt="image1">
+    <img src="{% static 'im3.png' %}" alt="image2">
+</main>
+
+
+
+<!-- Include your JavaScript files for interactivity -->
+<script src="script.js"></script>
+</body>
+</html>

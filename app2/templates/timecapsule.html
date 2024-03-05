@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Time Capsule</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Include your CSS files for styling -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        header {
+            background-color: #21c09d;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        main {
+            padding: 20px;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(2, 1fr); /* Updated to two columns */
+        }
+
+        section {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color:#2621c0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input, textarea, select {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        button {
+            background-color: #caede1;
+            color: #2621c0;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color:#caede1;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header Section -->
+<header>
+    <h1>Create Your Time Capsule</h1>
+</header>
+
+<!-- Main Content Section -->
+<main>
+
+    <!-- Create a Capsule Section -->
+    <section id="create-capsule">
+        <h2>Create a Capsule</h2>
+        <label for="capsule-title">Title:</label>
+        <input type="text" id="capsule-title" placeholder="Enter the title">
+
+        <label for="capsule-description">Description:</label>
+        <textarea id="capsule-description" placeholder="Enter the description"></textarea>
+
+        <label for="capsule-date">Choose Opening Date:</label>
+        <input type="date" id="capsule-date">
+
+        <button onclick="createCapsule()">Create Capsule</button>
+    </section>
+
+    <!-- Add Memories Section -->
+    <section id="add-memories">
+        <h2>Add Memories</h2>
+        <!-- Provide options for adding various types of content -->
+        <!-- For simplicity, let's assume a text entry and an image upload -->
+        <label for="text-entry">Text Entry:</label>
+        <textarea id="text-entry" placeholder="Write something memorable"></textarea>
+
+        <label for="image-upload">Image Upload:</label>
+        <input type="file" id="image-upload" accept="image/*">
+
+        <button onclick="addMemories()">Add to Capsule</button>
+    </section>
+
+    <!-- Set Opening Date and Reminders Section -->
+    <section id="set-opening-date">
+        <h2>Set Opening Date</h2>
+        <label for="opening-date">Opening Date:</label>
+        <input type="date" id="opening-date">
+
+        <label for="event-milestone">Event or Milestone (Optional):</label>
+        <input type="text" id="event-milestone" placeholder="Enter event or milestone">
+
+        <button onclick="setOpeningDate()">Set Opening Date</button>
+
+        <h2>Reminders</h2>
+        <label for="reminder-date">Reminder Date:</label>
+        <input type="date" id="reminder-date">
+
+        <button onclick="setReminder()">Set Reminder</button>
+    </section>
+
+    <!-- Notifications Section -->
+    <section id="notifications">
+        <h2>Notifications</h2>
+        <p>Receive notifications when the opening date of your time capsule is approaching.</p>
+        <!-- Implementing notifications would typically require server-side logic -->
+        <!-- For simplicity, it's omitted in this example -->
+    </section>
+
+</main>
+
+<!-- Include your JavaScript files for interactivity -->
+<script src="script.js"></script>
+</body>
+</html>
